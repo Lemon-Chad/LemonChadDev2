@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --bg-color: #17151b;
+    --prim-color: #d9d1dc;
+    --seco-color:rgb(176, 139, 190);
+    --tert-color:rgb(135, 90, 135);
+    --panel-translucent: #c5b3d611;
+    --panel-semitranslucent: #c5b3d65d;
+    --sparkle-color: #7a698c;
+}
+
+body {
+    background-color: var(--bg-color);
+
+    /* default font will be rubik ig */
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--prim-color);
+
+    padding: 0.5% 1%;
+
+    user-select: none;
+}
+
+#myname {
+    float: center;
+    text-align: center;
+    width: 100%;
+}
+
+.divider {
+    width: 100%;
+    border-top: 0.2rem solid var(--prim-color);
+    margin-bottom: 1.5rem;
+}
+
+.myquote {
+    float: right;
+    background-color: var(--prim-color);
+    color: var(--bg-color);
+
+    padding: 0 3em;
+    margin: 0.1em 0em;
+    text-align: right;
+    font-size: 0.7em;
+    
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+#myquote1 {
+    font-family: "Playfair Serif", serif;
+}
+
+#myquote2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#myquote3 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#myquote4 {
+    font-style: italic;
+}
+
+#myquote5 {
+    font-family: 'Old Standard TT', serif;
+}
+
+#myquote6 {
+    font-family: 'Oswald', sans-serif;
+}
+
+#myquote7 {
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.6em;
+}
+
+#myquote8 {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+}
+
+#template-sparkle {
+    width: 0;
+    height: 0;
+}
+
+#sparkles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -100000;
+    overflow: hidden;
+}
+
+@keyframes sparkle-animation {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+.sparkle-instance {
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    opacity: 0;
+}
+
+.sparkle-instance > g > path {
+    fill: var(--sparkle-color);
+}
+
+.first-panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-panel {
+    float: left;
+    width: 45%;
+}
+
+.left-panel-mobile {
+    width: 100%;
+    font-size: 2vw;
+}
+
+.right-panel {
+    float: right;
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    border: 0.2em solid var(--prim-color);
+    border-radius: 1.5em;
+    padding: 2%;
+    background-color: var(--panel-translucent);
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+}
+
+.profile > img {
+    width: 33%;
+    border: 0.2em solid var(--prim-color);
+    border-radius: 100%;
+    box-shadow: 0em 0.5em 0em var(--seco-color);
+    margin-bottom: 1.5em;
+}
+
+.profrow {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.4em;
+}
+
+.profrow > p:nth-child(1) {
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.socials {
+    margin-top: 0.5em;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.4em;
+}
+
+.socialbutton {
+    width: 30%;
+}
+
+.socialbutton > svg {
+    width: 100%;
+    height: 100%;
+}
+
+.socialbutton > svg > path {
+    stroke-width: 0;
+    fill: var(--seco-color);
+    transition: 0.2s ease-in-out;
+}
+
+.socialbutton > svg > g > path {
+    stroke-width: 0.05em;
+    stroke: var(--bg-color);
+    fill: var(--seco-color);
+    transition: 0.2s ease-in-out;
+}
+
+.socialbutton:hover > svg > path {
+    fill: var(--prim-color);
+}
+
+.socialbutton:hover > svg > g > path {
+    fill: var(--prim-color);
+}
+
+#projectsheader {
+    margin-top: 5%;
+}
+
+.stickytop {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    padding-top: 0;
+    z-index: 50;
+    background-color: var(--bg-color);
+    margin-bottom: 2em;
+}
+
+.stickytop > .divider {
+    margin-bottom: 0;
+}
+
+#messageheader {
+    margin-top: 2em;
+    font-family: 'Playfair Serif', serif;
+}
+
+/* message section */
+
+#message-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-left: 10%;
+    font-size: 1.6em;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+input {
+    width: 40%;
+    height: 2em;
+    background-color: var(--panel-semitranslucent);
+    color: var(--prim-color);
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.2em 0.2em;
+    cursor: pointer;
+    font-size: 0.6em;
+    font-family: 'Oswald', monospace;
+    transition: 0.2s ease-in-out;
+}
+
+input:hover {
+    background-color: var(--prim-color);
+    color: var(--bg-color);
+}
+
+input:focus {
+    outline: 0;
+    background-color: var(--seco-color);
+    color: var(--bg-color);
+}
+
+textarea {
+    min-width: 75%;
+    max-width: 75%;
+    margin-bottom: 0.5em;
+    background-color: var(--panel-semitranslucent);
+    color: var(--prim-color);
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.2em 0.2em;
+    cursor: pointer;
+    font-size: 0.6em;
+    font-family: 'Oswald', monospace;
+    transition: 0.2s ease-in-out;
+}
+
+textarea:hover {
+    background-color: var(--prim-color);
+    color: var(--bg-color);
+}
+
+textarea:focus {
+    outline: 0;
+    background-color: var(--seco-color);
+    color: var(--bg-color);
+}
+
+button {
+    font-size: 0.6em;
+    width: 9em;
+    height: 3em;
+    border: none;
+    border-radius: 0.2em 0.2em;
+    cursor: pointer;
+    background-color: var(--panel-semitranslucent);
+    color: var(--prim-color);
+    backdrop-filter: blur(5px);
+    transition: 0.2s ease-in-out;
+    font-family: 'Oswald', serif;
+    font-style: normal;
+}
+
+button:hover {
+    background-color: var(--prim-color);
+    color: var(--bg-color);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+
+/* Projects section */
+
+.project-category {
+    display: flex;
+    align-items: space-between;
+    padding: 0 2%;
+    border: 0.2em solid var(--prim-color);
+    border-radius: 1.5em;
+    background-color: var(--panel-translucent);
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+.category-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Playfair Display', serif;
+}
+
+.project-collapse-button {
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    background-color: var(--tert-color);
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: monospace;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-collapse-button:hover {
+    background-color: var(--seco-color);
+    transform: scale(1.2);
+}
+
+.project-collapse-button > p {
+    font-size: 3em;
+    pointer-events: none;
+}
+
+.projects-list {
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    max-height: 0;
+}
+
+.project-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    margin-bottom: 1em;
+}
+
+.project-text {
+    width: 62%;
+}
+
+.project-visuals {
+    display: flex;
+    float: right;
+    flex-direction: column;
+    justify-content: center;
+    width: 32%;
+    align-items: center;
+}
+
+.project-img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10%;
+    box-shadow: 0em 0.7em 0em var(--seco-color);
+    aspect-ratio: 1 / 1;
+    border: 0.4em solid var(--prim-color);
+}
+
+.project-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 70%;
+    margin-top: 2em;
+}
+
+.project-links > a {
+    margin: auto 1em;
+}
+
+.project-text > p {
+    font-size: 1.5em;
+}
+
+/*
+FONTS
+
+.playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.rubik-<uniquifier> {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.oswald-<uniquifier> {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.roboto-mono-<uniquifier> {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.instrument-serif-regular {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.old-standard-tt-regular {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.old-standard-tt-bold {
+  font-family: "Old Standard TT", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.old-standard-tt-regular-italic {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+*/

@@ -1,0 +1,103 @@
+{
+    "machine_learning": {
+        "title": "Machine Learning",
+        "projects": [
+            {
+                "name": "Iris",
+                "desc": "Iris is an AI-powered voice-activated assistent to reduce friction in Google Workspace products for people with disabilities.<br/><br/>Iris is a chrome extension that leverages OpenAI-Whisper and GPT-4o Mini to translate and handle user requests. These requests are driven by AWS Lambda, which interacts with the Google Cloud API to fulfill the user's requests. Iris can summarize emails, create documents, manage your calendar, and more.<br/><br/>Iris was created in a team of three in 24 hours during Carnegie Mellon's TartanHacks 2026.",
+                "github": "https://github.com/jacobselbo/iris",
+                "img": "assets/projects/iris.png"
+            },
+            {
+                "name": "NueroEv-AugTopologies",
+                "desc": "I read once in an MIT Journal about an interesting new machine learning algorithm known as NEAT, the NeuroEvolution of Augmented Topologies. It sounded extremely interesting, and I knew I had to take a shot at it.<br/><br/>In my Python implementation of NEAT, I forced agents to evolve to survive in a simple 2D world. Agents can reproduce, eat plants, move, and inevitably die. Their brains utilize a \"gene\" system, which determines what activation functions their hidden layers have, what branches they have across layers, weights, biases, number of layers, etc. When two agents reproduce, they perform a \"gene crossover\", where genes are shuffled, distributed, and mutated to force evolution. When an agent arises that is able to properly reproduce and eat food to keep itself alive, it dominates.<br/><br/>MatPlotLib is utilized to create visuals, having a population chart, and a dot chart of the agents in the flat 2D plane.",
+                "github": "https://github.com/Lemon-Chad/NeuroEv-AugTopologies",
+                "img": "assets/projects/neat.png"
+            },
+            {
+                "name": "Reinforcement Learning TicTacToe",
+                "desc": "Reinforcement learning was my favorite machine learning algorithm when I first entered the field, and the idea of it fascinated me. How do you reward or punish a computer? What does this strange Q-Learning equation mean? What's an alpha?<br/><br/>To solve these questions, I finally bit the bullet and attempted to implement an agent based on all my learnings, and of course I made it play TicTacToe. The agent learns from game states, and simply playing against itself. When it loses, it punishes the losing move in memory, alongside propogating a decaying punishment score upwards from the chain of moves it made. It takes very few games for the AI to get very good.<br/><br/>While I didn't implement full Q-Learning in this agent, and used more of a simplified matchbox algorithm, I would love to apply this to a more complex environment in the future. Having an agent that takes limited sensory input and uses full Q-Learning to succeed is one of my ideal projects.",
+                "github": "https://github.com/Lemon-Chad/Reinforcement-Learning-Agent",
+                "img": "assets/projects/reinforcementagent.png"
+            },
+            {
+                "name": "Filler AI",
+                "desc": "I used to play GamePigeon's Filler game all the time with one of my friends, but they kept beating me. I got annoyed, and designed an agent to always win at Filler.<br/><br/>The agent process is simple, it uses minimax with alpha-beta pruning to search all possible games quickly for the most efficient move. This is similar to what old Chess or Checkers models used to do. Essentially, the algorithm tries to minimize the opponents score, and maximize its own score, and searches for the move that ends with the ideal conditions from all possible game states. However, alpha-beta pruning significantly speeds this up, by saying if we already know one potential outcome of a move is better than the previous best, we dont need to search the rest of the outcomes. This is the new best! Clever right?<br/><br/>This script reads a game state from a text file, and then allows you to play against the agent in the CLI. I used it to mimick my friend's turns so I could see what the agent would do, optimally, and win!",
+                "github": "https://github.com/Lemon-Chad/FillerAI",
+                "img": "assets/projects/fillerai.png"
+            },
+            {
+                "name": "Convolutional Numbers",
+                "desc": "The standard machine-learning project, the convolutional number project. Every machine-learning interested person has done this before. Most people trained on MNIST, but I actually designed my own data set for this one, and it trains the model extremely well!<br/><br/>Not only does this standard 8x8 image convolutional model recognize training images with low error, it has a CLI that allows you to feed it the paths of your own training images. You can also use a draw command to draw 8x8 images in ASCII in the CLI, and have the model guess those too.",
+                "github": "https://github.com/Lemon-Chad/Convolutional-Numbers",
+                "img": "assets/projects/convolutionalnumbers.png"
+            }
+        ]
+    },
+    "computer_architecture": {
+        "title": "Computer Architecture",
+        "projects": [
+            {
+                "name": "Nupiz",
+                "desc": "Nupiz is definitely one of my favorite projects. It's a statically-typed, object-oriented, bytecode-compiled programming language. It took a lot to write, I learned how to design a full language pipeline, a compiler, my own virtual machine! There were guides in the beginning, but eventually once I got to making my own native library system, imports, compile-time checking??? I was all on my own.<br/><br/>Not only has this been one of my most fun projects to work on personally, especially since its something I can use to make more of my own things, it has also been incredibly useful to me from a learning standpoint. Now that I know how to make large complicated languages, I have been able to quickly write smaller, more niche languages for my own side-projects. Need a quick filter system that can be written in configs thats ultra-specific? Write a language! Need a system to make some base-10 machine code for some weird VM? Write a language! More details on that one below...<br/><br/>I have a hunch I'm going to continue working on this project, writing some good docs, a website maybe even hosted by itself. If you're looking for a major project of mine to watch heavily, this might be the one.",
+                "github": "https://github.com/Lemon-Chad/NupizLang",
+                "img": "assets/projects/nupiz.png"
+            },
+            {
+                "name": "DASM2",
+                "desc": "DASM2 is one of my more... esoteric projects.<br/><br/>DASM2 stands for Desmos Assembly 2. I was curious how far I could push the basic principles of computer architecture, and thus designed a Base-10 CPU architecture that runs inside of Desmos graphing calculator. It has 10 read-write registers, an input register, RGB pixel output, a stack, and everything else a good CPU needs. DASM2 is the assembly language that compiles into the Base-10 machine code. It's contained entirely within a single Python file, making it extremely lightweight. It has support for all basic operations, labels, branching, comparisons, functions, and more. A full breakdown of the language and it's documentation can be found on the linked GitHub repository.<br/><br/>The CPU is Turing-complete, so any program can run in it if you're willing to write it in DASM2. Ironically, DASM2 feels more complete and user-friendly than most assembly languages, so I personally find it more enjoyable.",
+                "github": "https://github.com/Lemon-Chad/Desmos-Assembly-2",
+                "img": "assets/projects/dasm2.png",
+                "site": "https://www.desmos.com/calculator/529c20be73"
+            }
+        ]
+    },
+    "web_design": {
+        "title": "Web Design",
+        "projects": [
+            {
+                "name": "TicTacTom",
+                "desc": "TicTacTom is an older project of mine. It's an extended version of TicTacToe, featuring as many players as you want, as big of a board as you want, and even AI players that can play against each other with high player counts.<br/><br/>The website is hosted on GitHub, although it can be setup on a Node.js-Express server.",
+                "github": "https://github.com/Lemon-Chad/TicTacTom",
+                "site": "https://lemon-chad.github.io/TicTacTom",
+                "img": "assets/projects/tictactom.png"
+            },
+            {
+                "name": "LemonChadDev",
+                "desc": "You'll never believe what this project is.<br/>Or maybe you will! I had an older, very outdated website, and I knew I had to make a new one. I wanted to show of my cool projects, including the ones that didn't quite make the resume cut, but also in an orderly fashion. Thus, <b><u>LEMONCHADDEV2</u></b> was born.<br/><br/>A lot of this website is actually auto-built from a config JSON file I have, such as the projects.json file! Not only that, but this site is written in vanilla HTML/CSS/JS.",
+                "img": "assets/projects/lemonchaddev.png",
+                "site": "https://lemonchad.dev/",
+                "github": "https://github.com/Lemon-Chad/LemonChadDev2"
+            },
+            {
+                "name": "BoilerFit",
+                "desc": "BoilerFit! BoilerFit was my first real hackathon project that felt like something functional. BoilerFit was built in a team of two at the BoilerMake XII hackathon.<br/><br/>BoilerFit is a well-tailored fitness tracking app for Purdue University! It features splits designed by a resident personal trainer, and a functional weight logging and rest day system. Not only can you track your weights, but based on your goals, BoilerFit will automatically suggest sets and reps for you.<br/><br/>Logging your weights isn't just aesthetic. BoilerFit's servers utilize simple machine learning to try and learn how you progress. The more you log, the more accurate it gets, and it will suggest the weights for each exercise every week to keep you constantly progressing. If you fail to meet progression expectations, it will suggest a deload, and then begin to relearn your progression from scratch.",
+                "img": "assets/projects/boilerfit.png",
+                "github": "https://github.com/alexyan06/BoilerFit"
+            }
+        ]
+    },
+    "misc": {
+        "title": "Miscellaneous",
+        "projects": [
+            {
+                "name": "Serenity",
+                "desc": "Serenity was a unique discord bot I briefly designed to test out Discord's new interactions and context UI menus.<br/><br/>Serenity allows users to explore vast dungeons and gather items to sell on a user-first marketplace to earn virtual currency. They can upgrade their character with their coins, and make themselves stronger to face tougher dungeons. However, if they failed a dungeon, everything they brought in to the dungeon is lost. Players have a chance to encounter lost gear from other players' failures in their dungeons, making for a nice reward on top.<br/><br/>Serenity also has a few layers of meta-progression, including a forging system that allowed players plenty with resources to use their high-tier loot to enhance their gear and give it unique upgrades. They could rename their gear, enchant their gear, and even sell it amongst themselves.<br/><br/>Although this bot was simply a brief test, it represents an interesting concept I would love to revisit. Whether this continues as a Discord bot, or a larger game, I would love to give it a shot. Maybe it could be designed as a simple website or mobile game? Time will tell...",
+                "github": "https://github.com/Lemon-Chad/Serenity-Bot",
+                "img": "assets/projects/serenity.png"
+            },
+            {
+                "name": "FEng3D",
+                "desc": "FEng3D was my first exposure to linear algebra, before I was even aware what that truly meant. FEng3D is a 3D render engine I implemented in Pygame. I was curious how 3D graphics work, so I googled, and I worked, and I made.<br/><br/>After I got the basics down, I took it upon myself to try and implement some sort of depth first rendering, so that it was more than just see-through wireframes. Although I never finished adding a lighting system for shading, I was able to make an interesting system, and add support for complex polygons and meshes.<br/><br/>Practical? No. Fun? Yes!",
+                "github": "https://github.com/Lemon-Chad/FEng3D",
+                "img": "assets/projects/feng3d.png"
+            },
+            {
+                "name": "BrainFunc",
+                "desc": "BrainFunc is an extension of the popular esolang \"BrainF***\". This language is notorious for being a complete Turing-complete language, despiting consisting of only the symbols <code style=\"padding-left: 0.2em; padding-right: 0.2em; background-color: var(--seco-color); color: var(--bg-color)\">[],.+-<></code>.<br/><br/>I enjoyed the challenges this language posed, but some parts were... tedious. Copying giant blocks of code was annoying, or representing constants such as 42 needing to be expanded to 42 plus symbols. Sure, you could write less than 42 plus symbols by writing a multiplication script, but then you had to think about writing a multiplication script just to write 42.<br/><br/>My branch, BrainFunc, adds functional macros, numerical constant expansion and constant variables. This removes a lot of the busywork of BrainF***, whilst not really making it any easier to write the code. Alongside this, it is contained within a single short Python file, which takes a brainfunc.txt file and outputs a transpiled.bf file. Wonderful!",
+                "github": "https://github.com/Lemon-Chad/BrainFunc",
+                "img": "assets/projects/brainfunc.png"
+            }
+        ]
+    }
+}
