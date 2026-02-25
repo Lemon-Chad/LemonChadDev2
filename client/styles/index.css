@@ -162,6 +162,7 @@ body {
     border-radius: 100%;
     box-shadow: 0em 0.5em 0em var(--seco-color);
     margin-bottom: 1.5em;
+    aspect-ratio: 1 / 1;
 }
 
 .profrow {
