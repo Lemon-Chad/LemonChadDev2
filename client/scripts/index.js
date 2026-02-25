@@ -14,8 +14,17 @@ function sendMessage(eCount) {
 
 sendMessage(0);
 
-$("#submit-form").on("click", () => {
-    $("#message-form").trigger("submit");
+$("#message-form").on("submit", e => {
+    e.preventDefault();
+
+    const formData = new FormData($("#message-form")[0]);
+    const data = Object.fromEntries(formData.entries());
+
     $("#message-form")[0].reset();
-    return false;
+
+    console.log(data);
+
+    $.post('/contact', data, res => {
+        console.log(res);
+    });
 });

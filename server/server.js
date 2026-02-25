@@ -3,6 +3,7 @@ import path from 'path';
 import { createServer } from 'http';
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
+import { existsSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -24,17 +25,22 @@ server.on('error', (err) => {
     console.log(err);
 })
 
-app.post('/contact', (req, res) => {
+app.post('/contact', async (req, res) => {
     const form = req.body;
-    const timestamp = Date.now();
+    const timestamp = new Date(Date.now()).toString();
 
-    fs.writeFile(
-        `./emails/${timestamp}.json`,
+    if (!existsSync('./emails/'))
+        await fs.mkdir('./emails/');
+
+    await fs.writeFile(
+        `./emails/${timestamp} -- ${form.name}.json`,
         JSON.stringify(form, null, 2),
         'utf-8'
     );
+
+    res.send("Email recieved.");
 });
 
-server.listen(8133, () => {
-    console.log('RPS started on 5000')
+server.listen(5342, () => {
+    console.log('RPS started on 5342')
 })
